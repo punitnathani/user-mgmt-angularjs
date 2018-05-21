@@ -1,5 +1,9 @@
-<div ng-repeat="a in userListCtrl.arr">
-    <span>{{a}}</span>
+<div ng-repeat="user in userListCtrl.userlist" ng-if="userListCtrl.loaded">
+    <pre>{{user}}</pre>
     <user></user>
     <hr>
+</div>
+
+<div ng-if="!userListCtrl.loaded">
+    <span>{{userListCtrl.message}}</span>
 </div>

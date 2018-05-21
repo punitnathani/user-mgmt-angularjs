@@ -7,6 +7,6 @@ angular.module('octus.users')
     }])
     .component('user', {
         templateUrl : 'js/views/user/user.html',
-        controller : 'js/views/user/user.component.js'
+        controller : 'UserController as userCtrl'
     })
 })();
