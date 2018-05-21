@@ -1,0 +1,15 @@
+{
+  "name": "user-mgmt-angularjs",
+  "version": "1.0.0",
+  "description": "User management app using AngularJS",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server ./app -a localhost -p 62887 -c-1"
+  },
+  "author": "Punit Nathani",
+  "license": "ISC",
+  "dependencies": {
+    "bower": "^1.8.4",
+    "http-server": "^0.11.1"
+  }
+}
