@@ -7,8 +7,11 @@
     <script src="lib/angular/angular.js"></script>
 
     <script src="app.js"></script>
+    <script src="js/utils/constants.js"></script>
+    <script src="js/views/userList/userList.component.js"></script>
+    <script src="js/views/user/user.component.js"></script>
 </head>
-<body ng-app>
-    <p>2 + 2 is {{2+2}}</p>
+<body ng-app="octus" ng-controller="AppController as appCtrl">
+    <user-list></user-list>
 </body>
 </html>
