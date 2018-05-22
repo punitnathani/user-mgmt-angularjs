@@ -28,6 +28,7 @@ angular.module('octus.users', ['octus.utils'])
                     vm.userlist[index] = user;
                 }, function(error) {
                     console.error('Error saving user: ' + error);
+                    alert('Error saving user');
                 });
         }
 
@@ -50,6 +51,7 @@ angular.module('octus.users', ['octus.utils'])
                     vm.userlist.splice(index, 1);
                 }, function(error) {
                     console.error('Error deleting user: ' + error);
+                    alert('Error deleting user');
                 });
         }
 
