@@ -31,6 +31,28 @@ angular.module('octus.users', ['octus.utils'])
                 });
         }
 
+        vm.deleteUser = function(value, index) {
+            // Check if it's the last remaining user
+            if(vm.userlist.length === 1) {
+                alert('Cannot remove last user');
+                return;
+            }
+            if(!confirm('Are you sure you want to delete the user?')) {
+                return;
+            }
+            // Check if it's newly added (hence not saved with ID)
+            if(!value.id) {
+                vm.userlist.splice(index, 1);
+                return;
+            }
+            UserListService.deleteUser(value)
+                .then(function(user) {
+                    vm.userlist.splice(index, 1);
+                }, function(error) {
+                    console.error('Error deleting user: ' + error);
+                });
+        }
+
     }])
     .component('userList', {
         templateUrl : 'js/views/userList/userList.html',
