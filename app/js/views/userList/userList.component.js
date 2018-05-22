@@ -14,7 +14,6 @@ angular.module('octus.users', ['octus.utils'])
                 vm.loaded = true;
                 vm.userlist = users.data;
             }, function(error) {
-                vm.loaded = true;
                 vm.message = 'Error fetching user data';
                 console.error('Error getting users: ' + error);
             });

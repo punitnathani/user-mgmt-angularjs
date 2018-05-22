@@ -15,6 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "1.6.2"
+    "angular": "1.6.2",
+    "open-iconic": "^1.1.1"
   }
 }
