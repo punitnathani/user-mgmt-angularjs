@@ -41,9 +41,22 @@ angular.module('octus.users')
             return defer.promise;
         }
 
+        var deleteUser = function(userdata) {
+            var defer = $q.defer();
+            var endpoint = BACKEND_API + '/users/' + userdata.id;
+            $http.delete(endpoint)
+                .then(function(response){
+                    defer.resolve();
+                }, function(error){
+                    defer.reject(error);
+                });
+            return defer.promise;
+        }
+
         return {
             getUserList : getUserList,
-            saveUser    : saveUser
+            saveUser    : saveUser,
+            deleteUser  : deleteUser
         }
     }]);
 })();

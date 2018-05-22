@@ -11,7 +11,7 @@ angular.module('octus.users')
         }
 
         vm.deleteUser = function() {
-            // Remove user
+            vm.onDelete({'value': vm.userData});
         }
 
         vm.saveUser = function() {
@@ -29,7 +29,8 @@ angular.module('octus.users')
         controller : 'UserController as userCtrl',
         bindings   : {
             userData : '<',
-            onSave   : '&'
+            onSave   : '&',
+            onDelete : '&'
         }
     })
 })();
