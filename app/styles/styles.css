@@ -1,0 +1,29 @@
+/* Generic */
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+/* User Data Form */
+.user-data-container {
+    display: flex;
+    justify-content: center;
+    border: 1px solid maroon;
+    border-radius: 10px;
+    margin: 10px;
+}
+.user-data-form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+.user-data-child {
+    display: flex;
+    align-items: center;
+    margin: 8px;
+}
+.user-data-child>label {
+    flex: 1;
+}
+.user-data-child>input {
+    flex: 2;
+}

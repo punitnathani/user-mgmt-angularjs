@@ -1,7 +1,5 @@
 <div ng-repeat="user in userListCtrl.userlist" ng-if="userListCtrl.loaded">
-    <pre>{{user}}</pre>
-    <user></user>
-    <hr>
+    <user user-data="user"></user>
 </div>
 
 <div ng-if="!userListCtrl.loaded">
