@@ -14,10 +14,22 @@ angular.module('octus.users', ['octus.utils'])
                 vm.loaded = true;
                 vm.userlist = users.data;
             }, function(error) {
-                vm.loaded = true;
                 vm.message = 'Error fetching user data';
                 console.error('Error getting users: ' + error);
             });
+
+        vm.addUser = function() {
+            vm.userlist.push({});
+        }
+
+        vm.saveUser = function(value, index) {
+            UserListService.saveUser(value)
+                .then(function(user) {
+                    vm.userlist[index] = user;
+                }, function(error) {
+                    console.error('Error saving user: ' + error);
+                });
+        }
 
     }])
     .component('userList', {
