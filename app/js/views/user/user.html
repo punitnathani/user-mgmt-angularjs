@@ -22,5 +22,10 @@
                 ng-disabled="!userCtrl.isEditable"
                 placeholder="Enter last name"/>
         </div>
+        <div class="user-data-child" id="user-data-save">
+            <button class="octus-icon-button" ng-click="userCtrl.saveUser()"
+                ng-disabled="!userCtrl.allowSave()"
+                ng-class="{'octus-icon-button-disabled': !userCtrl.allowSave()}">Save</button>
+        </div>
     </form>
 </div>

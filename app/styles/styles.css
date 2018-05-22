@@ -25,6 +25,11 @@ span.oi {
     margin: 0 5%;
 
 }
+.octus-icon-button-disabled {
+    background-color: grey;
+    border-color: grey;
+    cursor: default;
+}
 /* User Data Form */
 .user-data-container {
     display: flex;
@@ -63,4 +68,7 @@ span.oi {
 }
 .user-data-child>input {
     flex: 2;
+}
+#user-data-save {
+    align-self: flex-end;
 }

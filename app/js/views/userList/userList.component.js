@@ -18,6 +18,19 @@ angular.module('octus.users', ['octus.utils'])
                 console.error('Error getting users: ' + error);
             });
 
+        vm.addUser = function() {
+            vm.userlist.push({});
+        }
+
+        vm.saveUser = function(value, index) {
+            UserListService.saveUser(value)
+                .then(function(user) {
+                    vm.userlist[index] = user;
+                }, function(error) {
+                    console.error('Error saving user: ' + error);
+                });
+        }
+
     }])
     .component('userList', {
         templateUrl : 'js/views/userList/userList.html',

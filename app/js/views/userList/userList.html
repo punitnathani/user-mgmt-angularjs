@@ -1,8 +1,8 @@
 <div ng-if="userListCtrl.loaded">
     <div ng-repeat="user in userListCtrl.userlist">
-        <user user-data="user"></user>
+        <user user-data="user" on-save="userListCtrl.saveUser(value, $index)"></user>
     </div>
-    <div class="octus-icon-button">
+    <div class="octus-icon-button" ng-click="userListCtrl.addUser()">
         <span class="oi" data-glyph="plus" title="Add User"></span>
         <span>Add</span>
     </div>

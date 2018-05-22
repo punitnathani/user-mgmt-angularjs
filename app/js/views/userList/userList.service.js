@@ -16,8 +16,34 @@ angular.module('octus.users')
             return defer.promise;
         }
 
+        var saveUser = function(userdata) {
+            var defer = $q.defer();
+            var request = {
+                data : userdata,
+                url  : BACKEND_API + '/users'
+            };
+            // Check if it's an update task
+            if(userdata.id) {
+                request.url += '/' + userdata.id;
+                request.method = 'PUT';
+            }
+            // If no id present, create a new user
+            else {
+                request.method = 'POST';
+            }
+            console.log(request);
+            $http(request)
+                .then(function(response){
+                    defer.resolve(response.data);
+                }, function(error) {
+                    defer.reject(error);
+                });
+            return defer.promise;
+        }
+
         return {
-            getUserList : getUserList
+            getUserList : getUserList,
+            saveUser    : saveUser
         }
     }]);
 })();
