@@ -3,12 +3,18 @@
 <head>
     <meta charset="utf-8">
     <title>Octus User Management</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
 
     <script src="lib/angular/angular.js"></script>
 
     <script src="app.js"></script>
+    <script src="js/utils/constants.js"></script>
+    <script src="js/views/userList/userList.component.js"></script>
+    <script src="js/views/userList/userList.service.js"></script>
+    <script src="js/views/user/user.component.js"></script>
 </head>
-<body ng-app>
-    <p>2 + 2 is {{2+2}}</p>
+<body ng-app="octus" ng-controller="AppController as appCtrl">
+    <user-list></user-list>
 </body>
 </html>

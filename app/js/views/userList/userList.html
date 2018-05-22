@@ -1,0 +1,7 @@
+<div ng-repeat="user in userListCtrl.userlist" ng-if="userListCtrl.loaded">
+    <user user-data="user"></user>
+</div>
+
+<div ng-if="!userListCtrl.loaded">
+    <span>{{userListCtrl.message}}</span>
+</div>
